@@ -1,1 +1,22 @@
-T'sup Dwog!
+{%extends "base.html"%}{% load bootstrap3 %}
+{% block content %}
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card-header">info ya kwako</div>
+            <div class="card-body">
+                <img class="img-responisve" src="https://images.pexels.com/photos/1114897/pexels-photo-1114897.jpeg?auto=compress&cs=tinysrgb&h=350">
+                <p>An awesome photo</p>
+            </div>
+            <div class="card-footer">
+                <a class="far fa-heart"></a>
+                <a class="far fa-comment"></a>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+
+    </div>
+</div>
+{% endblock %}
