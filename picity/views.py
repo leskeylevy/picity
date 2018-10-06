@@ -56,3 +56,7 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can' '<a href="/accounts/login"> login </a>your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+def profile(request):
+    return render(request,'profile.html')

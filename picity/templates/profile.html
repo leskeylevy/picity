@@ -1,1 +1,41 @@
-WAAAAAAAABEBE!
+{%extends "base.html"%}
+{% block content %}
+<header>
+    <div class="container">
+
+        <div class="profile">
+
+            <div class="profile-image">
+               <img src="https://images.pexels.com/photos/1114897/pexels-photo-1114897.jpeg?auto=compress&cs=tinysrgb&h=350">
+            </div>
+            <div class="profile-user-settings">
+
+                <h1 class="profile-username">{{request.user.username}}</h1>
+
+                <button class="btn profile-settings-btn">Edit Profile</button>
+
+                <button class="btn profile-settings-btn"><a class="fa fa-cog"></a></button>
+
+            </div>
+
+            <div class="profile-stats">
+                <ul>
+                    <li><span class="profile-stat-count">12</span> posts</li>
+                    <li><span class="profile-stat-count">120</span> followers</li>
+                    <li><span class="profile-stat-count">512</span> following</li>
+                </ul>
+            </div>
+
+            <div class="profile-bio">
+              <p><span class="profile-real-name">first_last</span>  lojjkgytg</p>
+            </div>
+
+        </div>
+
+        <!--End of profile-->
+
+    </div>
+
+    <!--End container-->
+</header>
+{% endblock%}
