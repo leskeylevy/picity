@@ -12,7 +12,7 @@ from django.core.mail import EmailMessage
 
 
 # Create your views here.
-def home(request):
+def index(request):
     return render(request, 'index.html')
 
 
@@ -25,7 +25,7 @@ def signup(request):
             user.save()
             current_site = get_current_site(request)
             mail_subject = 'Activate your picity account.'
-            message = render_to_string('acc_active_email.html', {
+            message = render_to_string('activate_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -53,7 +53,6 @@ def activate(request, uidb64, token):
         user.save()
         login(request, user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. Now you can <a href="/accounts/login> login '
-                            '</a>your account.')
+        return HttpResponse('Thank you for your email confirmation. Now you can' '<a href="/accounts/login"> login </a>your account.')
     else:
         return HttpResponse('Activation link is invalid!')
