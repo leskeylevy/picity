@@ -15,7 +15,7 @@
 
                 <h1 class="profile-username">{{request.user.username}}</h1>
 
-                <button class="btn profile-settings-btn">Edit Profile</button>
+                <button class="btn profile-settings-btn" data-toggle="modal" data-target="#profile">Edit Profile</button>
 
                 <button class="fa fa-cog"></button>
                 <button class="fas fa-upload" data-toggle="modal" data-target="#exampleModal"></button>
@@ -47,6 +47,31 @@
   </div>
 </div>
                     <!--END MODAL-->
+                    <!--UPDATE BIO-->
+          <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Upload New Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  action="{%url 'new-post'%}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+
+    {% bootstrap_form profile%}
+    <input type="submit" class="btn btn-success btn-lg" value="Post">
+  </form>
+      </div>
+      <div class="modal-footer">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+                    <!--END OF BIO MODAL-->
             <div class="profile-stats">
                 <ul>
                     <li><span class="profile-stat-count">12</span> posts</li>

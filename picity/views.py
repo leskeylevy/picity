@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SignupForm, PostImage
+from .forms import SignupForm, PostImage, Prof
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -67,13 +67,19 @@ def profile(request):
     images = Image.objects.all()
     current_user = request.user
     form = PostImage()
+    profile = Prof()
     if request.method == 'POST':
         form = PostImage(request.POST, request.FILES)
+        profile = Prof(request.POST,request.FILES,instance=request.user.profile)
         if form.is_valid():
             image = form.save(commit=False)
             image.user = current_user
             image.save()
-    return render(request,'profile.html', {"form":form, 'images':images})
+        elif profile.is_valid():
+            prf = profile.save(commit=False)
+            prf.user = current_user
+            prf.save()
+    return render(request,'profile.html', {"form":form, 'images':images, 'profile':profile})
 
 
 @login_required()
