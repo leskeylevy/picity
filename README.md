@@ -14,7 +14,7 @@ python3.6 -m venv --without-pip virtual Step 3: Activate virtual environment
 source virtual/bin/activate install pip using curl
 
 curl https://bootstrap.pypa.io/get-pip.py | python run the application.
-* Here is a link to the [live site](www.picity.heroku.com)
+* Here is a link to the [live site](https://www.picity.heroku.com)
 
 python3.6 manage.py runserver
 ## BUILT WITH
