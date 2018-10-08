@@ -10,6 +10,7 @@ from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
+from .forms import PostImage
 
 
 # Create your views here.
@@ -61,4 +62,18 @@ def activate(request, uidb64, token):
 
 
 def profile(request):
-    return render(request,'profile.html')
+    current_user = request.user
+    form = PostImage()
+    if request.method == 'POST':
+        form = PostImage(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = current_user
+            image.save()
+    return render(request,'profile.html', {"form":form})
+
+
+@login_required()
+def new_post(request):
+
+        return redirect('index')
