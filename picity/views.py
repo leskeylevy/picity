@@ -12,6 +12,7 @@ from django.core.mail import EmailMessage
 
 
 # Create your views here.
+# @login_required
 def index(request):
     return render(request, 'index.html')
 
