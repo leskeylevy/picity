@@ -37,11 +37,29 @@ class Image(models.Model):
     profile = models.ForeignKey(Profile, null=True)
     posted_time = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.user.username
-
     class Meta:
-        ordering = ['-id']
+        ordering = ['posted_time']
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def update_image(cls, id, update):
+        update_image = cls.objects.filter(id=id).update(target=update)
+        return update_image
+
+    @classmethod
+    def get_all(cls):
+        images = cls.objects.order_by('posted_time')
+        return images
+
+    @classmethod
+    def get_image(cls, id):
+        image = cls.objects.get(id=id)
+        return image
 
 
 class Comments(models.Model):

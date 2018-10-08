@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SignupForm
+from .forms import SignupForm, PostImage
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -10,13 +10,14 @@ from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
-from .forms import PostImage
+from .models import Image
 
 
 # Create your views here.
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    images = Image.objects.all()
+    return render(request, 'index.html', {"images":images})
 
 
 def signup(request):
@@ -62,6 +63,8 @@ def activate(request, uidb64, token):
 
 
 def profile(request):
+
+    images = Image.objects.all()
     current_user = request.user
     form = PostImage()
     if request.method == 'POST':
@@ -70,7 +73,7 @@ def profile(request):
             image = form.save(commit=False)
             image.user = current_user
             image.save()
-    return render(request,'profile.html', {"form":form})
+    return render(request,'profile.html', {"form":form, 'images':images})
 
 
 @login_required()

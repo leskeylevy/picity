@@ -3,17 +3,19 @@
 <div class="container ">
     <div class="row">
         <div class="col-md-3"></div>
+
         <div class="col-md-6">
-            <div class="card-header">info ya kwako</div>
+            {% for item in images %}
+            <div class="card-header">{{item.image.user}}</div>
             <div class="card-body">
-                <img class="img-responisve" src="https://images.pexels.com/photos/1114897/pexels-photo-1114897.jpeg?auto=compress&cs=tinysrgb&h=350">
-                <p>An awesome photo</p>
+                <img class="img-responsive" src="{{item.image.url}}" style="text-align: center;" alt="" width="570px" height="570px">
+                <p class="card-text">{{item.caption}}</p>
             </div>
             <div class="card-footer">
                 <a class="far fa-heart"></a>
                 <a class="far fa-comment"></a>
             </div>
-
+            {% endfor %}
         </div>
         <div class="col-md-3"></div>
 
