@@ -10,7 +10,7 @@ from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
-from .models import Image
+from .models import Image, Profile
 
 
 # Create your views here.
@@ -27,6 +27,8 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            profile = Profile(user=user)
+            profile.save()
             current_site = get_current_site(request)
             mail_subject = 'Activate your picity account.'
             message = render_to_string('activate_email.html', {
