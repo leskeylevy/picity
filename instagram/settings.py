@@ -174,8 +174,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'slimleskey@gmail.com'
-EMAIL_HOST_PASSWORD = 'Dadiesboy12'
-EMAIL_PORT = 587
