@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^new/posts$', views.profile,name='new-post'),
     url(r'^comment/(\d+)',views.comment,name='comment'),
     url(r'^search',views.search_user,name="search_user"),
+    url(r'^prof/(\d+)',views.profs,name="profs")
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

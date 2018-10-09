@@ -113,3 +113,9 @@ def search_user(request):
     else:
         message = "You have not searched for any users yet"
         return render(request, 'search.html',{"message":message})
+
+
+def profs(request,id):
+    prof = Profile.objects.get(user_id=id)
+    images=Image.objects.filter(user_id=request.user.id)
+    return render(request,'prof.html',{"profs":prof, "images":images})
