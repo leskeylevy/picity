@@ -90,13 +90,20 @@
 
         </div>
             </div>
+            
             <div class="col-md-8">
-                {% for image in images%}
-                <img src="{{image.image.url}}" alt="image">
-                {% endfor %}
+                
             </div>
         </div>
-
+        <div class="row">
+          {% for image in images%}
+            <div class="col-md-4">
+                <img src="{{image.image.url}}" alt="image" width="350px" height="350px"><br>
+            <br>
+            </div>
+            
+          {% endfor %}
+        </div>
 
 
         <!--End of profile-->
