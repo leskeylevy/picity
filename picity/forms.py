@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Image,Profile
+from .models import Image,Profile, Comments
 
 
 class SignupForm(UserCreationForm):
@@ -24,3 +24,7 @@ class Prof(forms.ModelForm):
         fields=('dp', 'bio')
 
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model=Comments
+        fields=['comment']

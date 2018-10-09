@@ -64,7 +64,7 @@ class Image(models.Model):
 
 class Comments(models.Model):
     user = models.ForeignKey(User)
-    image = models.ForeignKey(Image)
+    image = models.ForeignKey(Image,related_name='comment')
     comment = models.CharField(max_length=200)
 
     def save_comment(self):

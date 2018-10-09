@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SignupForm, PostImage, Prof
+from .forms import SignupForm, PostImage, Prof, CommentForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -17,7 +17,8 @@ from .models import Image, Profile
 @login_required
 def index(request):
     images = Image.objects.all()
-    return render(request, 'index.html', {"images":images})
+    comnt = CommentForm()
+    return render(request, 'index.html', {"images":images,"comnt":comnt})
 
 
 def signup(request):
@@ -88,3 +89,16 @@ def profile(request):
 def new_post(request):
 
         return redirect('index')
+
+
+def comment(request,id):
+    post=Image.objects.get(id=id)
+    if request.method == 'POST':
+        comnt=CommentForm(request.POST)
+        if comnt.is_valid():
+            comment=comnt.save(commit=False)
+            comment.user=request.user
+            comment.image=post
+            comment.save()
+            return redirect('index')
+    return redirect('index')

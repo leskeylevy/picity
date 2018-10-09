@@ -17,10 +17,21 @@
             <div class="card-body">
                 <img class="img-responsive" src="{{item.image.url}}" style="text-align: center;" alt="" width="570px" height="570px">
                 <p class="card-text">{{item.caption}}</p>
+                <small>posted <em><b>:{{item.posted_time|timesince}}</b> ago</em></small>
+                <br>
             </div>
             <div class="card-footer">
                 <a class="far fa-heart"></a>
-                <a class="far fa-comment"></a>
+                <a class="far fa-comment">{{item.comment.all|length}}</a>
+                {% for comment in item.comment.all %}
+                <b><em><a href="{{comment.user.username}}">{{comment.user.username}}</a></em></b>:{{comment.comment}}
+                <br>
+                {% endfor %}
+                <form id="comment" action="/comment/{{item.id}}" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                    {% bootstrap_form comnt %}
+                    <input type="submit" class="btn btn-primary btn-sm" value="comment">
+                </form>
             </div>
             {% endfor %}
         </div>
