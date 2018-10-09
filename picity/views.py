@@ -107,7 +107,7 @@ def comment(request,id):
 def search_user(request):
     if 'user' in request.GET or request.GET['user']:
         search_item = request.GET.get('user')
-        searched_users = User.objects.filter(username=search_item)
+        searched_users = User.objects.filter(username__icontains=search_item)
         message = f"{search_item}"
         return render(request,'search.html',{"message":message,"users":searched_users})
     else:
