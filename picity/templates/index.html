@@ -6,7 +6,14 @@
 
         <div class="col-md-6">
             {% for item in images %}
-            <div class="card-header">{{item.image.user}}</div>
+            <!--kunafaa kua na if statement hapa-->
+                 {% if item.user.profile.dp %}
+            <div class="card-header"><img src="{{item.user.profile.dp.url}}" class="rounded-circle" width="50px" height="50px">{{item.user.username}}</div>
+
+            {% else %}
+            <div class="card-header"><img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f8a140ac20927deb386d1c9187433d6&auto=format&fit=crop&w=500&q=60" class="rounded-circle" width="50px" height="50px">{{item.user.username}}</div>
+
+            {% endif %}
             <div class="card-body">
                 <img class="img-responsive" src="{{item.image.url}}" style="text-align: center;" alt="" width="570px" height="570px">
                 <p class="card-text">{{item.caption}}</p>

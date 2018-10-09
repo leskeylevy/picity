@@ -22,3 +22,5 @@ class Prof(forms.ModelForm):
     class Meta:
         model=Profile
         fields=('dp', 'bio')
+
+

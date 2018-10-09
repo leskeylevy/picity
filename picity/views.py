@@ -66,9 +66,9 @@ def activate(request, uidb64, token):
 
 def profile(request):
 
-    images = Image.objects.all()
     current_user = request.user
     form = PostImage()
+    images=Image.objects.filter(user=current_user)
     profile = Prof()
     if request.method == 'POST':
         form = PostImage(request.POST, request.FILES)
