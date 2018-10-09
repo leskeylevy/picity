@@ -102,3 +102,14 @@ def comment(request,id):
             comment.save()
             return redirect('index')
     return redirect('index')
+
+
+def search_user(request):
+    if 'user' in request.GET or request.GET['user']:
+        search_item = request.GET.get('user')
+        searched_users = User.objects.filter(username=search_item)
+        message = f"{search_item}"
+        return render(request,'search.html',{"message":message,"users":searched_users})
+    else:
+        message = "You have not searched for any users yet"
+        return render(request, 'search.html',{"message":message})
