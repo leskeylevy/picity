@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c39553-36c7-445e-ad16-444f98941cf4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/picity/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/picity/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/picity/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/picity/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +35,7 @@
           <entry key="env" value="4" />
           <entry key="html" value="32" />
           <entry key="jpg" value="1" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="py" value="41" />
           <entry key="txt" value="4" />
         </counts>
@@ -46,7 +45,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="32" />
           <entry key="Image" value="1" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="41" />
         </counts>
@@ -57,7 +56,7 @@
           <entry key="css" value="106" />
           <entry key="env" value="33" />
           <entry key="html" value="4824" />
-          <entry key="md" value="365" />
+          <entry key="md" value="369" />
           <entry key="py" value="6972" />
           <entry key="txt" value="109" />
         </counts>
@@ -66,7 +65,7 @@
         <counts>
           <entry key="CSS" value="106" />
           <entry key="HTML" value="4824" />
-          <entry key="Markdown" value="365" />
+          <entry key="Markdown" value="369" />
           <entry key="PLAIN_TEXT" value="154" />
           <entry key="Python" value="6972" />
         </counts>
@@ -123,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/picity/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -131,6 +130,18 @@
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="239">
+                <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -163,18 +174,6 @@
               <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instagram/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#643#684#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -229,7 +228,6 @@
         <option value="$PROJECT_DIR$/instagram/urls.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/picity/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/instagram/settings.py" />
@@ -242,6 +240,7 @@
         <option value="$PROJECT_DIR$/picity/models.py" />
         <option value="$PROJECT_DIR$/picity/templates/index.html" />
         <option value="$PROJECT_DIR$/picity/tests.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -371,6 +370,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="25" width="683" height="743" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3212121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -383,7 +383,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3050571" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3050571" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -514,16 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -663,6 +653,16 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="239">
+            <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
