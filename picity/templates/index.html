@@ -16,7 +16,7 @@
             {% endif %}
             <div class="card-body">
                 <img class="img-responsive" src="{{item.image.url}}" style="text-align: center;" alt="" width="570px" height="570px">
-                <p class="card-text">{{item.caption}}</p>
+                <p class="card-text">{{item.user.username}}:{{item.caption}}</p>
                 <small>posted <em><b>:{{item.posted_time|timesince}}</b> ago</em></small>
                 <br>
             </div>
